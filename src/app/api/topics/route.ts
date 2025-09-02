@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
 
-export async function GET(request: NextRequest) {
+export async function GET(_: NextRequest) {
   try {
     const response = await fetch(`${BACKEND_URL}/topics`);
 

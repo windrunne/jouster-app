@@ -4,10 +4,10 @@ const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const response = await fetch(`${BACKEND_URL}/analyses/${params.id}`);
+    const response = await fetch(`${BACKEND_URL}/analyses/${(await params).id}`);
 
     if (!response.ok) {
       if (response.status === 404) {
@@ -32,10 +32,10 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const response = await fetch(`${BACKEND_URL}/analyses/${params.id}`, {
+    const response = await fetch(`${BACKEND_URL}/analyses/${(await params).id}`, {
       method: 'DELETE',
     });
 

@@ -37,7 +37,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
         <CardContent>
           <div className="text-center text-gray-500 dark:text-gray-400 py-12">
             <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-            <p>Enter some text and click "Analyze Text" to see results</p>
+            <p>Enter some text and click `Analyze Text` to see results</p>
           </div>
         </CardContent>
       </Card>
