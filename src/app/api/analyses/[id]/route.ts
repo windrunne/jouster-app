@@ -7,7 +7,7 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const response = await fetch(`${BACKEND_URL}/analyses/${(await params).id}`);
+    const response = await fetch(`${BACKEND_URL}/analyses/${(await params).id}/`);
 
     if (!response.ok) {
       if (response.status === 404) {

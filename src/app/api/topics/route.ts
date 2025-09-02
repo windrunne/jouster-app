@@ -4,7 +4,7 @@ const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
 
 export async function GET(_: NextRequest) {
   try {
-    const response = await fetch(`${BACKEND_URL}/topics`);
+    const response = await fetch(`${BACKEND_URL}/topics/`);
 
     if (!response.ok) {
       throw new Error(`Backend responded with status: ${response.status}`);

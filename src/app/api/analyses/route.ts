@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
       params.append('limit', searchParams.get('limit')!);
     }
 
-    const response = await fetch(`${BACKEND_URL}/analyses?${params.toString()}`);
+    const response = await fetch(`${BACKEND_URL}/analyses/?${params.toString()}`);
 
     if (!response.ok) {
       throw new Error(`Backend responded with status: ${response.status}`);
